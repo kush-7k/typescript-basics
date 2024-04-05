@@ -58,3 +58,14 @@ let myUser: User12 ={
 myUser.email = "k@keyof.cn"
 //This is error
 //myUser.id = 12 as it was readonly
+
+type cardNumber = {
+    cardNumber: string
+}
+type cardDate ={
+    cardDate: string
+}
+ 
+type cardDetails = cardNumber & cardDate & {
+    cvv: number
+}
