@@ -34,3 +34,12 @@ class User2 {
     }
 }
 const kush = new User("k@k.com", "kush");
+class SubUser extends User2 {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        this._courseCount = 4;
+    }
+}
