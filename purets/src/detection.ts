@@ -83,3 +83,44 @@ function getFood(pet: Fish | Bird){
         return "Bird Food"
     }
 }
+
+//Discriminated Union
+
+interface Circle{
+    kind: "circle",
+    radius: number
+}
+interface Square{
+    kind: "square"
+    side: number
+}
+interface Rectangle{
+    kind: "rectangle"
+    length: number
+    width: number
+}
+
+type Shape = Circle | Square | Rectangle
+function getTrueShape(shape: Shape){
+    if(shape.kind==="circle"){
+        return Math.PI * shape.radius ** 2
+    }
+    //return shape.side*2
+}
+
+function getArea(shape:Shape){
+    switch(shape.kind){
+        case "circle":
+            return Math.PI * shape.radius ** 2;
+        case "square":
+            return shape.side*2;
+        case "rectangle":
+            return shape.length * shape.width;
+
+            //Default case is made for the cases which are never declared and then declared after this and due to this
+            //The code will create an error and check it as this default case is of type never and hence it will be never assigned
+        default:
+            const _defaultForShape: never = shape
+            return _defaultForShape
+    }
+}
