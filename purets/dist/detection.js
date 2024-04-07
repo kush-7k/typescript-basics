@@ -13,3 +13,21 @@ function provideId(id) {
     }
     id.toLowerCase;
 }
+function printAll(strs) {
+    // DO not do this !!!!!
+    if (strs) {
+        if (typeof strs === "object") {
+            for (const s of strs) {
+                console.log(s);
+            }
+        }
+        else if (typeof strs === "string") {
+            console.log(strs);
+        }
+    }
+}
+function isAdmin(account) {
+    if ("isAdmin" in account) {
+        return isAdmin;
+    }
+}

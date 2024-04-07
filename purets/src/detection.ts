@@ -12,3 +12,35 @@ function provideId(id: string | null){
     }
     id.toLowerCase
 }
+
+function printAll(strs: string|string[]|null){
+
+    // DO not do this !!!!!
+
+    if(strs){
+        if(typeof strs === "object"){
+            for(const s of strs){
+                console.log(s);
+            }
+        }
+        else if (typeof strs === "string"){
+            console.log(strs)
+        }
+    }
+}
+
+interface User12{
+    name: string,
+    email: string
+}
+interface Admin{
+    name: string,
+    email: string,
+    isAdmin: boolean
+}
+
+function isAdmin(account: User | Admin){
+    if("isAdmin" in account){
+        return isAdmin
+    }
+}
